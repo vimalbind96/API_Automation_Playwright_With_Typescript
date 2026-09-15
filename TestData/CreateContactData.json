@@ -1,4 +1,4 @@
-{
+{ 
     "URL": {
         "CreateContact_URL": "https://qavimalb.agilecrm.com/dev/api/contacts",
         "UpdateContact_URL": "https://qavimalb.agilecrm.com/dev/api/contacts/edit-properties",

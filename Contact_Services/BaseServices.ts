@@ -8,14 +8,11 @@ export class BaseServices {
         this.request = request;
     }
 
-
-
-
     async getRequest(endPoint: string,): Promise<APIResponse> {
         let apiContaxt: APIRequestContext = await this.request.newContext({
             httpCredentials: {
-                username: testData.valid_Credential.UserName,
-                password: testData.valid_Credential.Password
+                username: testData.Authentication_Credential.UserName,
+                password: testData.Authentication_Credential.Password
             }
         });
 
@@ -30,8 +27,8 @@ export class BaseServices {
     async postRequest(endPoint: string, payloadData: any) {
         let apiContaxt: APIRequestContext = await this.request.newContext({
             httpCredentials: {
-                username: testData.valid_Credential.UserName,
-                password: testData.valid_Credential.Password
+                username: testData.Authentication_Credential.UserName,
+                password: testData.Authentication_Credential.Password
             }
         });
 
@@ -45,16 +42,11 @@ export class BaseServices {
         return response;
     }
 
-
-
-
-
-
     async putRequest(endPoint: string, payloadData: any): Promise<APIResponse> {
         let apiContaxt: APIRequestContext = await this.request.newContext({
             httpCredentials: {
-                username: testData.valid_Credential.UserName,
-                password: testData.valid_Credential.Password
+                username: testData.Authentication_Credential.UserName,
+                password: testData.Authentication_Credential.Password
             }
         });
 
@@ -68,14 +60,11 @@ export class BaseServices {
         return response;
     }
 
-
-
-
-    async patchRequest(endPoint: string,): Promise<APIResponse> {
+    async patchRequest(endPoint: string,jsonData:any): Promise<APIResponse> {
         let apiContaxt: APIRequestContext = await this.request.newContext({
             httpCredentials: {
-                username: testData.valid_Credential.UserName,
-                password: testData.valid_Credential.Password
+                username: testData.Authentication_Credential.UserName,
+                password: testData.Authentication_Credential.Password
             }
         });
 
@@ -83,21 +72,17 @@ export class BaseServices {
             headers: {
                 "accept": "application/json",
                 "Content-Type": "application/json"
-
-            }
+            },
+            data:jsonData
         })
         return response;
     }
 
-
-
-
-
     async deleteRequest(endPoint: string,): Promise<APIResponse> {
         let apiContaxt: APIRequestContext = await this.request.newContext({
             httpCredentials: {
-                username: testData.valid_Credential.UserName,
-                password: testData.valid_Credential.Password
+                username: testData.Authentication_Credential.UserName,
+                password: testData.Authentication_Credential.Password
             }
         });
 
@@ -108,10 +93,5 @@ export class BaseServices {
         })
         return response;
     }
-
-
-
-
-
 
 }

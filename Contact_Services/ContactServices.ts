@@ -1,5 +1,4 @@
 import { APIRequest, APIRequestContext, APIResponse } from '@playwright/test';
-import commonData from '../TestData/API_CommonData.json'
 import testData from '../TestData/CreateContactData.json'
 import { BaseServices } from './BaseServices';
 
@@ -10,20 +9,17 @@ export class ContactServices extends BaseServices{
         super(request)
         this.request = request;
     }
-
-  
-
-    async createContacts() {
-       return await this.postRequest(testData.URL.CreateContact_URL,testData.Data.CreateContact)
+    async createContacts(jsonData:any) {
+       return await this.postRequest(testData.URL.CreateContact_URL,jsonData)
         
     }
 
-    async updateFullContact() {
-      return await this.putRequest(testData.URL.UpdateContact_URL,testData.Data.UpdateContact);
+    async updateFullContact(jsonData:any) {
+      return await this.putRequest(testData.URL.UpdateContact_URL,jsonData);
 
     }
 
-    async fetchContacts() :Promise<APIResponse>{
+    async getContacts() :Promise<APIResponse>{
       return await this.getRequest(testData.URL.GetContact_URL)
          
     }
@@ -31,7 +27,7 @@ export class ContactServices extends BaseServices{
 
     
     // async updateContactWithpartiallyData() {
-    //   return await this.putRequest(testData.URL.UpdateContact_URL,testData.Data.UpdateContact);
+    //   return await this.patchRequest(testData.URL.UpdateContact_URL,testData.Data.UpdateContact);
 
     // }
 
