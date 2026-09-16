@@ -1,8 +1,8 @@
 { 
     "URL": {
         "CreateContact_URL": "https://qavimalb.agilecrm.com/dev/api/contacts",
-        "UpdateContact_URL": "https://qavimalb.agilecrm.com/dev/api/contacts/edit-properties",
-        "GetContact_URL": "https://qavimalb.agilecrm.com/dev/api/contacts"
+        "UpdateContact_URL": "https://qavimalb.agilecrm.com/",
+        "GetContact_URL": "https://qavimalb.agilecrm.com/"
     },
     "Data": {
         "CreateContact": {
@@ -27,7 +27,7 @@
                     "type": "SYSTEM",
                     "name": "email",
                     "subtype": "work",
-                    "value": "vimal@gmail.com"
+                    "value": "vimalqq1@gmail.com"
                 },
                 {
                     "type": "SYSTEM",
@@ -87,7 +87,11 @@
             ]
         },
         "UpdateContact": {
-            "id": "5040508235350016",
+            "id": "5282494963974144",
+            "tags": [
+                "Lead",
+                "Likely Buyer"
+            ],
             "properties": [
                 {
                     "type": "SYSTEM",

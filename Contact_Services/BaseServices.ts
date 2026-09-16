@@ -42,7 +42,7 @@ export class BaseServices {
         return response;
     }
 
-    async putRequest(endPoint: string, payloadData: any): Promise<APIResponse> {
+    async putRequest(endPoint: string, jsonData: any): Promise<APIResponse> {
         let apiContaxt: APIRequestContext = await this.request.newContext({
             httpCredentials: {
                 username: testData.Authentication_Credential.UserName,
@@ -55,7 +55,7 @@ export class BaseServices {
                 "accept": "application/json",
                 "Content-Type": "application/json"
             },
-            data: payloadData
+            data: jsonData
         })
         return response;
     }

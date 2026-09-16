@@ -14,7 +14,7 @@ export default defineConfig({
 
 
   use: {
-    // baseURL: 'http://localhost:8888/',
+    //baseURL: 'https://qavimalb.agilecrm.com/',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
