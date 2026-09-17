@@ -1,8 +1,6 @@
-{ 
+{
     "URL": {
-        "CreateContact_URL": "https://qavimalb.agilecrm.com/dev/api/contacts",
-        "UpdateContact_URL": "https://qavimalb.agilecrm.com/",
-        "GetContact_URL": "https://qavimalb.agilecrm.com/"
+        "baseUrl": "https://qavimalb.agilecrm.com/"
     },
     "Data": {
         "CreateContact": {
@@ -85,6 +83,25 @@
                     "value": "[\"5767466600890368\",\"5114076984246272\",\"5746725247516672\"]"
                 }
             ]
+        },
+
+        "updateStarValueByID":{
+    "id": "5676477903273984",
+    "star_value": 20
+},
+"updateTagsValue":{
+    "id": "4584963487825920",
+    "tags": [
+        "test1",
+        "test2"
+    ]
+},
+
+
+
+        "updateLeadScore_ById": {
+            "id": "5676477903273984",
+            "lead_score": 20
         },
         "UpdateContact": {
             "id": "5282494963974144",

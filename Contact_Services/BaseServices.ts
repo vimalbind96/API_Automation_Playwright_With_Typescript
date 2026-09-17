@@ -16,7 +16,7 @@ export class BaseServices {
             }
         });
 
-        let response = await apiContaxt.get(endPoint, {
+        let response:APIResponse = await apiContaxt.get(endPoint, {
             headers: {
                 "accept": "application/json",
             }
@@ -32,7 +32,7 @@ export class BaseServices {
             }
         });
 
-        let response = await apiContaxt.post(endPoint, {
+        let response:APIResponse = await apiContaxt.post(endPoint, {
             headers: {
                 "accept": "application/json",
                 "Content-Type":"application/json"
@@ -50,7 +50,7 @@ export class BaseServices {
             }
         });
 
-        let response = await apiContaxt.put(endPoint, {
+        let response:APIResponse = await apiContaxt.put(endPoint, {
             headers: {
                 "accept": "application/json",
                 "Content-Type": "application/json"
@@ -68,7 +68,7 @@ export class BaseServices {
             }
         });
 
-        let response = await apiContaxt.patch(endPoint, {
+        let response:APIResponse = await apiContaxt.patch(endPoint, {
             headers: {
                 "accept": "application/json",
                 "Content-Type": "application/json"
@@ -86,7 +86,7 @@ export class BaseServices {
             }
         });
 
-        let response = await apiContaxt.delete(endPoint, {
+        let response:APIResponse = await apiContaxt.delete(endPoint, {
             headers: {
                 "accept": "application/json",
             }

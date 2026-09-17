@@ -26,7 +26,6 @@ export class BasePage {
     async click(element: Locator): Promise<void> {
         await element.click();
     }
-
     /** 
     This Method is use to double click on the specific Element 
     @param  element- It's Take one parameter of the webElement
@@ -60,8 +59,6 @@ export class BasePage {
         await element.nth(indexNumber).click();
     }
     //=====================<Fill Action>======================== 
-
-
     /**
      * This Method Is Use To fill Value in the Text Box
      * @param It's Take two parameter first webElement and second String for Value
@@ -94,9 +91,7 @@ export class BasePage {
     async clear(element: Locator): Promise<void> {
         await element.clear();
     }
-
-    // ===================<KEYBOARD ACTIONS>=======================
-
+    // ===================<KEYBOARD ACTIONS>=======================//
     /**
      * This method is use to press Enter button
      * @param element -It's Take  location of webElement
@@ -111,11 +106,9 @@ export class BasePage {
     async pressTab(element: Locator): Promise<void> {
         element.press('Tab');
     }
-
     // ==========================================
     // ELEMENT INFO
     // ==========================================
-
     /**
      * This Method is use for get Text not matter element visible or not on Web Page 
      * @param element -It's Take  location of webElement
@@ -132,7 +125,6 @@ export class BasePage {
     async getAllTexts(element: Locator): Promise<string[]> {
         return await element.allInnerTexts();
     }
-
     /**
      * This method is use to get value of attribute
      * @param element It's Take  location of webElement
@@ -158,13 +150,9 @@ export class BasePage {
     async getCountElement(element: Locator): Promise<number> {
         return await element.count();
     }
-
-
-    // ==========================================
+    // ==========================================//
     // DROPDOWN
-    // ==========================================
-
-
+    // ==========================================//
     /**
      * This Method Is Use to select Value in the Drop Down using By Indexing
      * @param element It's Take  location of webElement
