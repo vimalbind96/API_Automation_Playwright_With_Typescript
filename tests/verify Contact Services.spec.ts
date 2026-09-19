@@ -1,7 +1,6 @@
 import { test} from "../Fixture/fixture";
 import {  APIResponse, expect } from "@playwright/test";
 import testData from '../TestData/ContactsDataFormate.json'
-import { json } from "node:stream/consumers";
 
 
 
@@ -19,7 +18,7 @@ expect(response.status()).toBe(200);
 let data=structuredClone(testData.Data.CreateContact);
 let emailProperties=data.properties.find(property=>property.name==="email");
 if(emailProperties){
-emailProperties.value="vimaly1@gmail.com";
+emailProperties.value="vimaly11@gmail.com";
 }
 
 
@@ -30,11 +29,11 @@ console.log(jsonResponse);
 expect(response.status()).toBe(200);
 expect(jsonResponse.properties[0].value).toBe("vimal");
 expect(jsonResponse.properties[1].value).toBe("Bind");
-expect(jsonResponse.properties[1].value).toBe("vimaly1@gmail.com");
+expect(jsonResponse.properties[2].value).toBe("vimaly11@gmail.com");
 })
 
 test('get contact by ID',async({contacts})=>{
-let response:APIResponse=await contacts.getContacts("dev/api/contacts/4730199113138176");
+let response:APIResponse=await contacts.getContacts("dev/api/contacts/5244611389489152");
 let jsonBody=await response.json();
 expect(response.status()).toBe(200);
 console.log(jsonBody)
@@ -100,5 +99,28 @@ console.log(jsonBody);
 
 })
 
+let tagJsonData=structuredClone(testData.Data.deleteTagsValue);
+tagJsonData.id="4730199113138176";
+tagJsonData.tags[0]="Lead";
 
+
+test('Delete tags value by ID',async({contacts})=>{
+let response=await contacts.deleteTagsValueByID("dev/api/contacts/delete/tags",tagJsonData);
+let jsonBody=await response.json();
+console.log(jsonBody);
+})
+
+test('Delete single contact',async({contacts})=>{
+let response:APIResponse=await contacts.deleteSingleContactByID("dev/api/contacts/5244611389489152");
+console.log(response.status());
+expect(response.status()).toBe(204);
+})
+
+test('Search contact by email',async({contacts})=>{
+let response:APIResponse=await contacts.searchContactByEmail("dev/api/contacts/search/email/vimaly11@gmail.com");
+let jsonBody=await response.json();
+console.log(jsonBody); 
+expect(response.status()).toBe(200);
+expect(jsonBody.properties[2].value).toBe("vimaly11@gmail.com");
+})
 

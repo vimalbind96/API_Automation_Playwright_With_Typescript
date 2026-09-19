@@ -32,9 +32,16 @@ export class ContactServices extends BaseServices {
   }
   async UpdateTagsValuebyID(endPoint: string, jsonData: any): Promise<APIResponse> {
     return await this.putRequest(testData.URL.baseUrl + endPoint, jsonData);
-
   }
-
+  async deleteTagsValueByID(endPoint:string,jsonData:any): Promise<APIResponse>{
+    return await this.putRequest(testData.URL.baseUrl+endPoint,jsonData);
+  }
+  async deleteSingleContactByID(endPoint:string): Promise<APIResponse>{
+    return await this.deleteRequest(testData.URL.baseUrl+endPoint);
+  }
+async searchContactByEmail(endPoint:string): Promise<APIResponse>{
+  return await this.getRequest(testData.URL.baseUrl+endPoint);
+}
 
 
 
