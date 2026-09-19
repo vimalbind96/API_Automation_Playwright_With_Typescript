@@ -124,3 +124,6 @@ expect(response.status()).toBe(200);
 expect(jsonBody.properties[2].value).toBe("vimaly11@gmail.com");
 })
 
+
+
+
