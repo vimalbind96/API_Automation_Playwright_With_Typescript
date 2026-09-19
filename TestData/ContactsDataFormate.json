@@ -84,28 +84,24 @@
                 }
             ]
         },
-
-        "updateStarValueByID":{
-    "id": "5676477903273984",
-    "star_value": 20
-},
-"updateTagsValue":{
-    "id": "4584963487825920",
-    "tags": [
-        "test1",
-        "test2"
-    ]
-},
-"deleteTagsValue":{
-    "id": "4584963487825920",
-    "tags": [
-        "test1",
-        "test2"
-    ]
-},
-
-
-
+        "updateStarValueByID": {
+            "id": "5676477903273984",
+            "star_value": 20
+        },
+        "updateTagsValue": {
+            "id": "4584963487825920",
+            "tags": [
+                "test1",
+                "test2"
+            ]
+        },
+        "deleteTagsValue": {
+            "id": "4584963487825920",
+            "tags": [
+                "test1",
+                "test2"
+            ]
+        },
         "updateLeadScore_ById": {
             "id": "5676477903273984",
             "lead_score": 20
