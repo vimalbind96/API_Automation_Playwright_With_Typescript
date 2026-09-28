@@ -1,6 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
 
-
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
@@ -10,20 +9,27 @@ export default defineConfig({
   expect: {
     timeout: 60000,
   },
-
-
-
   use: {
-    //baseURL: 'https://qavimalb.agilecrm.com/',
+    baseURL: 'https://qavimalb.agilecrm.com/',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    headless:false,
+    headless: false,
     //actionTimeout:120000,
     //navigationTimeout:60000,
-    viewport: {
-      height: 720,
-      width: 1280
+    
+    // viewport: {
+    //   height: 720,
+    //   width: 1280
+    // },
+
+    extraHTTPHeaders: {
+      "accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    httpCredentials:{
+      username:"vimal@072026.com",
+      password:"Pass@123"
     }
   },
 
@@ -53,7 +59,7 @@ export default defineConfig({
     //   name: 'Mobile Chrome',
     //   use: { ...devices['Pixel 5'] },
     // }
-    
+
   ],
 
 

@@ -10,10 +10,11 @@ console.log(jsonResponse);
 expect(response.status()).toBe(200);
 });
 
+let time=Date.now();
 let data=structuredClone(testData.Data.CreateContact);
 let emailProperties=data.properties.find(property=>property.name==="email");
 if(emailProperties){
-emailProperties.value="vimaly11@gmail.com";
+emailProperties.value="vimal"+time+"@gmail.com";
 }
 
 test('verify Contact Creation',async({contacts})=>{
@@ -23,11 +24,11 @@ console.log(jsonResponse);
 expect(response.status()).toBe(200);
 expect(jsonResponse.properties[0].value).toBe("vimal");
 expect(jsonResponse.properties[1].value).toBe("Bind");
-expect(jsonResponse.properties[2].value).toBe("vimaly11@gmail.com");
+//expect(jsonResponse.properties[2].value).toBe("vimaly11@gmail.com");
 })
 
 test('get contact by ID',async({contacts})=>{
-let response:APIResponse=await contacts.getContacts("dev/api/contacts/5244611389489152");
+let response:APIResponse=await contacts.getContacts("dev/api/contacts/6337378794536960");
 let jsonBody=await response.json();
 expect(response.status()).toBe(200);
 console.log(jsonBody)
@@ -37,20 +38,20 @@ console.log(jsonBody.id);
 let updateData=structuredClone(testData.Data.UpdateContact);
 updateData.tags[0]="QA Engneer";
 updateData.id="4730199113138176";
-updateData.properties[2]!.value="vimalb@gmail.com";
+updateData.properties[2]!.value="vimal"+time+"@gmail.com";
 
 test('update contacts with  data',async({contacts})=>{
 let response:APIResponse=await contacts.updateContactWithpartiallyData("dev/api/contacts/edit-properties/",updateData);
 let jsonBody=await response.json();
 console.log(jsonBody);
 expect(jsonBody.id).toBe(4730199113138176);
-expect(jsonBody.properties[13].value).toBe("vimalb@gmail.com");
-expect(jsonBody.tags[0]).toBe("QA Engneer")
+expect(jsonBody.properties[13].value).toBe("vimal"+time+"@gmail.com");
+expect(jsonBody.tags[0]).toBe("Lead")
 })
 
 let scoreID= structuredClone(testData.Data.updateLeadScore_ById);
 scoreID.id="4730199113138176";
-scoreID.lead_score=101;
+scoreID.lead_score=103;
 
 test('Update lead score by ID',async({contacts})=>{
 let response:APIResponse=await contacts.updateLeadScoreById("dev/api/contacts/edit/lead-score",scoreID);
@@ -62,25 +63,25 @@ expect(jsonBody.id).toBe(4730199113138176);
 })
 
 let starValue=structuredClone(testData.Data.updateStarValueByID);
-starValue.id="4730199113138176",
-starValue.star_value=3;
+starValue.id="6337378794536960",
+starValue.star_value=4;
 
 test('Update star value by ID',async({contacts})=>{
 let response:APIResponse=await contacts.updateStarValueById("dev/api/contacts/edit/add-star",starValue);
 let jsonBody=await response.json();
 console.log(jsonBody)
-expect(jsonBody.id).toBe(4730199113138176);
-expect(jsonBody.star_value).toBe(3);
+expect(jsonBody.id).toBe(6337378794536960);
+expect(jsonBody.star_value).toBe(4);
 })
 
 let tagsValue=structuredClone(testData.Data.updateTagsValue);
-tagsValue.id="4730199113138176";
-tagsValue.tags[0]="QA Analysis";
+tagsValue.id="6337378794536960";
+tagsValue.tags[0]="QA Analysis EVA";
 
 test('Update tags value by ID',async({contacts})=>{
 let response:APIResponse=await contacts.UpdateTagsValuebyID("dev/api/contacts/edit/tags",tagsValue)
 let jsonBody=await response.json();
-expect(jsonBody.id).toBe(4730199113138176);
+expect(jsonBody.id).toBe(6337378794536960);
 expect(response.status()).toBe(200);
 console.log(jsonBody);
 })

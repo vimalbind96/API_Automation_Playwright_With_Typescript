@@ -1,7 +1,4 @@
 {
-    "URL": {
-        "baseUrl": "https://qavimalb.agilecrm.com/"
-    },
     "Data": {
         "CreateContact": {
             "star_value": "4",

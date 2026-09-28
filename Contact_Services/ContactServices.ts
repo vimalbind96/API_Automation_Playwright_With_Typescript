@@ -10,37 +10,37 @@ export class ContactServices extends BaseServices {
     this.request = request;
   }
   async createContacts(endPoint: any, jsonData: any): Promise<APIResponse> {
-    return await this.postRequest(testData.URL.baseUrl + endPoint, jsonData)
+    return await this.postRequest(endPoint, jsonData)
   }
-  async updateFullContact(jsonData: any): Promise<APIResponse> {
-    return await this.putRequest(testData.URL.baseUrl, jsonData);
+  async updateFullContact(endPoint:string,jsonData: any): Promise<APIResponse> {
+    return await this.putRequest(endPoint,jsonData);
   }
   async getContacts(endPoint: string): Promise<APIResponse> {
-    return await this.getRequest(testData.URL.baseUrl + endPoint)
+    return await this.getRequest( endPoint)
   }
   async updateContactWithpartiallyData(endPoint: string, jsonData: any): Promise<APIResponse> {
-    return await this.putRequest(testData.URL.baseUrl + endPoint, jsonData);
+    return await this.putRequest( endPoint, jsonData);
   }
-  async updateContactPropertiesByID(contactID: number, jsonData: any): Promise<APIResponse> {
-    return await this.putRequest(testData.URL.baseUrl + contactID, jsonData);
+  async updateContactPropertiesByID(endPoint_With_ContactID: string, jsonData: any): Promise<APIResponse> {
+    return await this.putRequest(endPoint_With_ContactID, jsonData);
   }
   async updateLeadScoreById(endPoint: string, jsonData: any): Promise<APIResponse> {
-    return await this.putRequest(testData.URL.baseUrl + endPoint, jsonData);
+    return await this.putRequest(endPoint, jsonData);
   }
   async updateStarValueById(endPoint: string, jsonData: any): Promise<APIResponse> {
-    return await this.putRequest(testData.URL.baseUrl + endPoint, jsonData);
+    return await this.putRequest(endPoint, jsonData);
   }
   async UpdateTagsValuebyID(endPoint: string, jsonData: any): Promise<APIResponse> {
-    return await this.putRequest(testData.URL.baseUrl + endPoint, jsonData);
+    return await this.putRequest(endPoint, jsonData);
   }
   async deleteTagsValueByID(endPoint:string,jsonData:any): Promise<APIResponse>{
-    return await this.putRequest(testData.URL.baseUrl+endPoint,jsonData);
+    return await this.putRequest(endPoint,jsonData);
   }
   async deleteSingleContactByID(endPoint:string): Promise<APIResponse>{
-    return await this.deleteRequest(testData.URL.baseUrl+endPoint);
+    return await this.deleteRequest(endPoint);
   }
 async searchContactByEmail(endPoint:string): Promise<APIResponse>{
-  return await this.getRequest(testData.URL.baseUrl+endPoint);
+  return await this.getRequest(endPoint);
 }
 
 
