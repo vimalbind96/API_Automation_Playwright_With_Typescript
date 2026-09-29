@@ -7,8 +7,8 @@ type fixture={
 contacts:ContactServices;
 }
 export const test=base.extend<fixture>({
-contacts:async({playwright},use)=>{
-    let contact:ContactServices=new ContactServices(playwright.request);
+contacts:async({request},use)=>{
+    let contact:ContactServices=new ContactServices(request);
     await use(contact) ;
 }
 

@@ -24,7 +24,7 @@ console.log(jsonResponse);
 expect(response.status()).toBe(200);
 expect(jsonResponse.properties[0].value).toBe("vimal");
 expect(jsonResponse.properties[1].value).toBe("Bind");
-//expect(jsonResponse.properties[2].value).toBe("vimaly11@gmail.com");
+expect(jsonResponse.properties[2].value).toBe("vimal"+time+"@gmail.com");
 })
 
 test('get contact by ID',async({contacts})=>{

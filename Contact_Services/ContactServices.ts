@@ -4,19 +4,20 @@ import { BaseServices } from './BaseServices';
 
 
 export class ContactServices extends BaseServices {
-  request: APIRequest;
-  constructor(request: APIRequest) {
+  request: APIRequestContext;
+  constructor(request: APIRequestContext) {
     super(request);
     this.request = request;
   }
-  async createContacts(endPoint: any, jsonData: any): Promise<APIResponse> {
+ 
+  async getContacts(endPoint: string): Promise<APIResponse> {
+    return await this.getRequest( endPoint)
+  }
+   async createContacts(endPoint: any, jsonData: any): Promise<APIResponse> {
     return await this.postRequest(endPoint, jsonData)
   }
   async updateFullContact(endPoint:string,jsonData: any): Promise<APIResponse> {
     return await this.putRequest(endPoint,jsonData);
-  }
-  async getContacts(endPoint: string): Promise<APIResponse> {
-    return await this.getRequest( endPoint)
   }
   async updateContactWithpartiallyData(endPoint: string, jsonData: any): Promise<APIResponse> {
     return await this.putRequest( endPoint, jsonData);
@@ -42,12 +43,5 @@ export class ContactServices extends BaseServices {
 async searchContactByEmail(endPoint:string): Promise<APIResponse>{
   return await this.getRequest(endPoint);
 }
-
-
-
-
-
-
-
 
 }
