@@ -1,10 +1,11 @@
-import { APIRequest, APIRequestContext, APIResponse } from '@playwright/test';
+import { APIRequestContext, APIResponse } from '@playwright/test';
 
 export class BaseServices {
     apiContaxt: APIRequestContext
     constructor(request: APIRequestContext) {
         this.apiContaxt = request;
     }
+
     async getRequest(endPoint: string,): Promise<APIResponse> {
         let response:APIResponse = await this.apiContaxt.get(endPoint)
         return response;

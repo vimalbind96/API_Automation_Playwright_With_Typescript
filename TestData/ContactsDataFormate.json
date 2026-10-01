@@ -27,7 +27,13 @@
                 {
                     "type": "SYSTEM",
                     "name": "address",
-                    "value": "{\"address\":\"225 George Street\",\"city\":\"NSW\",\"state\":\"Sydney\",\"zip\":\"2000\",\"country\":\"Australia\"}"
+                    "value": {
+                        "address": "Adampur Nigoh",
+                        "city": "Jaunpur",
+                        "state": "Utter Pradesh",
+                        "zip": "222162",
+                        "country": "india"
+                    }
                 },
                 {
                     "name": "phone",
@@ -77,7 +83,10 @@
                 {
                     "name": "My custom field of type companies",
                     "type": "CUSTOM",
-                    "value": "[\"5767466600890368\",\"5114076984246272\",\"5746725247516672\"]"
+                    "value": [
+                    "5767466600890368",
+                    "5114076984246272",
+                    "5746725247516672"]
                 }
             ]
         },
@@ -129,7 +138,13 @@
                 {
                     "type": "SYSTEM",
                     "name": "address",
-                    "value": "{\"address\":\"225 George Street\",\"city\":\"NSW\",\"state\":\"Sydney\",\"zip\":\"2000\",\"country\":\"Australia\"}"
+                    "value": {
+                        "address": "Adampur Nigoh",
+                        "city": "Jaunpur",
+                        "state": "Utter Pradesh",
+                        "zip": "222162",
+                        "country": "india"
+                    }
                 }
             ]
         }
